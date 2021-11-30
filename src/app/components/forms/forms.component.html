@@ -1,0 +1,15 @@
+
+<div class="center">
+    <p>forms works!</p>
+</div>
+
+<button (click) = "onClick($event)">click Here</button>
+<br>
+<input  [(ngModel)]="name" type = "text">{{name}}
+
+<div *ngFor = "let color of colors; index as i; odd as o">
+    <h1>{{o}}  {{color}}</h1>
+</div>
+
+
+<button class="btn btn-primary">Hello</button>

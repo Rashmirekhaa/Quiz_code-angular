@@ -1,0 +1,19 @@
+.main{
+    margin-top: 85px;
+    width: "100%";
+    margin-left: 20px;
+}
+.heading {
+   font-weight: 800;
+}
+.list{
+    font-weight: 600;
+    margin: 10px;
+}
+.pre{
+    margin:10px;
+}
+
+.next{
+    margin:10px;
+}

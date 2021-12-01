@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login',
@@ -6,8 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
+  loginForm: FormGroup;
+  
+  
+  constructor(private fb: FormBuilder, private router: Router) { 
+    this.loginForm = this.fb.group({
+      userName: ['', Validators.required],
+      password: ['', Validators.required],
+    });
+  }
 
-  constructor() { }
+  onSubmit(){
+    // TODO: Use EventEmitter with form value
+    console.warn(this.loginForm.value);
+    this.router.navigate(['/assessment'], { replaceUrl: true });
+  }
 
   ngOnInit(): void {
   }

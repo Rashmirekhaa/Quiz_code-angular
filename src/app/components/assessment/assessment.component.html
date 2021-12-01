@@ -1,0 +1,19 @@
+<div>
+    <app-header></app-header>
+</div>
+
+<div class="main">
+    <p class="heading">Assessment</p>
+    <mat-divider ></mat-divider>
+    <div *ngFor="let assessment of assessments" class="list">
+        <p>{{assessment.name}} # {{assessment.id}}  
+            <button class="start" mat-raised-button primary (click)="start(assessment)">
+                Start
+            </button>
+        </p>
+        
+    </div>
+    
+        
+</div>
+

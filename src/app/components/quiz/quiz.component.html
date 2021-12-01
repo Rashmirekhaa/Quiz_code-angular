@@ -1,0 +1,24 @@
+<div>
+    <app-header></app-header>
+</div>
+
+<div class="main">
+    <p class="heading">{{name}} #{{id}}</p>
+    <mat-divider ></mat-divider>    
+    <div *ngFor="let q of quiz; let i = index" class="list">
+        <div *ngIf="i===currentQues">
+            <p>Q{{q.questionNumber}}. {{q.question}}</p>
+             <mat-radio-button class="list" *ngFor="let option of q.options">{{option.value}}</mat-radio-button>
+             <div>
+                <button class="start" mat-raised-button primary (click)="pre()" class="pre" [disabled]="i===0">
+                    Previous
+                </button>
+                <button class="start" mat-raised-button primary (click)="next()" class="next" [disabled]="i===quiz.length-1">
+                    Next
+                </button>
+             </div>
+             
+        </div>
+    </div>
+</div>
+

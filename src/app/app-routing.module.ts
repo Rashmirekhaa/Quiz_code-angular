@@ -7,17 +7,14 @@ import { FormsComponent } from './components/forms/forms.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { AssessmentComponent } from './components/assessment/assessment.component';
+import { QuizComponent } from './components/quiz/quiz.component';
 
 
 const routes: Routes = [
-  {path: '',redirectTo: 'HomeComponent',pathMatch:'full'},
-  {path: 'login',component: LoginComponent},
-  {path: 'contact',component: ContactComponent},
-  {path: 'test',component: TestComponent},
-  {path: 'forms',component: FormsComponent},
-  {path: 'product-list',component:ProductListComponent},
-  {path: 'user-login',component:UserLoginComponent}
-
+  {path: '',component: UserLoginComponent, pathMatch:'full'},
+  {path: 'assessment',component: AssessmentComponent},
+  {path: 'quiz',component: QuizComponent},
 ];
 
 @NgModule({

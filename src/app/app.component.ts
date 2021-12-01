@@ -7,10 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class AppComponent{
-  title = 'Angular-App';
-  username:string ="Rashmi";
-
-  
   constructor() { }
 }
 

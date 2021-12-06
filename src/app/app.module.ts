@@ -12,7 +12,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductListComponent } from './products/product-list/product-list.component';
-
+import {MatIconModule} from '@angular/material/icon';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CovertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { SharedComponent } from './shared/shared/shared.component';
@@ -53,8 +53,9 @@ import { QuizComponent } from './components/quiz/quiz.component';
     ReactiveFormsModule,
     MatDividerModule,
     MatButtonModule,
-    MatRadioModule
-    ],
+    MatRadioModule,
+    MatIconModule
+  ],
   providers: [
   ],
   bootstrap: [AppComponent]

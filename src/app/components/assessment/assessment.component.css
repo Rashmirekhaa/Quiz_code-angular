@@ -11,6 +11,23 @@
     margin-top: 10px;
 }
 .start{
-    margin: 5px;
-    background-color:#1976d2;
+   margin-left: 10px;
+   width: 120px;
+}
+
+.mainDiv{
+    display: flex;
+    flex:1;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.subOne{
+    width: 20%;
+}
+.subTwo{
+    width: 80%; 
+}
+
+.assName{
+    margin-top: 10px;
 }

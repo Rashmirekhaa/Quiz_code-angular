@@ -7,13 +7,25 @@
    font-weight: 800;
 }
 .list{
-    font-weight: 600;
+    font-weight: 500 !important;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
 }
 .pre{
     margin:10px;
 }
+.que{
+    font-weight: bold;
+    margin-top: 20px;
+}
 
+:host ::ng-deep .mat-radio-label-content{
+    font-weight: 400 !important;
+}
 .next{
     margin:10px;
+}
+.back{
+    margin-bottom: 10px;
 }

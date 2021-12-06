@@ -6,11 +6,19 @@
     <p class="heading">Assessment</p>
     <mat-divider ></mat-divider>
     <div *ngFor="let assessment of assessments" class="list">
-        <p>{{assessment.name}} # {{assessment.id}}  
-            <button class="start" mat-raised-button primary (click)="start(assessment)">
-                Start
-            </button>
-        </p>
+        <div class="mainDiv">
+            <div class="subOne">
+                <p class="assName">{{assessment.name}} # {{assessment.id}} </p>
+            </div>
+            <div class="subTwo">
+                <button class="start" mat-raised-button primary (click)="start(assessment)">
+                    Start
+                </button>
+            </div>
+            
+           
+        </div>
+       
         
     </div>
     

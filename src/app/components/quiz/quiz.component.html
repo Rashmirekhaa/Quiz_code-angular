@@ -1,23 +1,34 @@
+<head>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.685.0.min.js"></script>
+</head>
 <div>
     <app-header></app-header>
 </div>
 
 <div class="main">
+    <button mat-raised-button primary (click)="submitTest()" class="back">
+        <mat-icon aria-hidden="false" aria-label="Back to Home">keyboard_backspace</mat-icon>
+    </button>
+
     <p class="heading">{{name}} #{{id}}</p>
     <mat-divider ></mat-divider>    
-    <div *ngFor="let q of quiz; let i = index" class="list">
+    <div *ngFor="let q of quiz; let i = index">
         <div *ngIf="i===currentQues">
-            <p>Q{{q.questionNumber}}. {{q.question}}</p>
-             <mat-radio-button class="list" *ngFor="let option of q.options">{{option.value}}</mat-radio-button>
+            <p class="que">Q{{q.questionNumber}}. {{q.question}}</p>
+             <mat-radio-button class="list" *ngFor="let option of q.options" ariaLabel="tes">
+                 {{option.value}}
+            </mat-radio-button>
              <div>
                 <button class="start" mat-raised-button primary (click)="pre()" class="pre" [disabled]="i===0">
                     Previous
                 </button>
-                <button class="start" mat-raised-button primary (click)="next()" class="next" [disabled]="i===quiz.length-1">
+                <button class="start" mat-raised-button primary (click)="next()" class="next" *ngIf="i!==quiz.length-1">
                     Next
                 </button>
+                <button class="start" mat-raised-button primary color="primary" (click)="submitTest()" class="next" *ngIf="i===quiz.length-1">
+                    Submit Test
+                </button>
              </div>
-             
         </div>
     </div>
 </div>

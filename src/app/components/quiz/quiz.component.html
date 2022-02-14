@@ -13,19 +13,19 @@
     <p class="heading">{{name}} #{{id}}</p>
     <mat-divider ></mat-divider>    
     <div *ngFor="let q of quiz; let i = index">
-        <div *ngIf="i===currentQues">
-            <p class="que">Q{{q.questionNumber}}. {{q.question}}</p>
+        <div>
+            <p class="que">Q{{currentQues}}. {{q.question}}</p>
              <mat-radio-button class="list" *ngFor="let option of q.options" ariaLabel="tes">
                  {{option.value}}
             </mat-radio-button>
              <div>
-                <button class="start" mat-raised-button primary (click)="pre()" class="pre" [disabled]="i===0">
+                <button class="start" mat-raised-button primary (click)="pre()" class="pre" [disabled]="true">
                     Previous
                 </button>
-                <button class="start" mat-raised-button primary (click)="next()" class="next" *ngIf="i!==quiz.length-1">
+                <button class="start" mat-raised-button primary (click)="next()" class="next" *ngIf="currentQues !== totalQues">
                     Next
                 </button>
-                <button class="start" mat-raised-button primary color="primary" (click)="submitTest()" class="next" *ngIf="i===quiz.length-1">
+                <button class="start" mat-raised-button primary color="primary" (click)="submitTest()" class="next" *ngIf="currentQues === totalQues">
                     Submit Test
                 </button>
              </div>

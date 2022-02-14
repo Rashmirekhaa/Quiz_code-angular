@@ -9,7 +9,8 @@ import { QuestionService } from "../../api/question.service";
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
-  currentQues = 0;
+  currentQues = 1;
+  totalQues = 0;
   quiz = questions.questions;
   id!: number;
   name!: string;
@@ -26,18 +27,16 @@ export class QuizComponent implements OnInit {
   fetchQuestions(){
     this.qService.getQuestion().subscribe((data)=>{
       console.log(1, data);
+      this.totalQues = Number(data.NoOfQuestions)
       if(data.questions.length){
-        console.log(2);
         const filterQuestion = data.questions.filter((indQues:any)=>{
           return indQues.currentQuestion === "true"
         })
-        console.log(3);
         if(filterQuestion.length){
           this.quiz = filterQuestion;
         } else {
           this.quiz = data.questions[0];
         }
-        console.log(this.quiz);
       }
     })
   }
@@ -64,8 +63,9 @@ export class QuizComponent implements OnInit {
     }
   }
   next(){
-    if(this.currentQues!== 9){
+    if(this.currentQues!== this.totalQues){
       this.currentQues+=1;
+      this.fetchQuestions()
     }
   }
 

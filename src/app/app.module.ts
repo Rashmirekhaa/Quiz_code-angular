@@ -24,6 +24,8 @@ import { MatDividerModule } from '@angular/material/divider'
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
 import { QuizComponent } from './components/quiz/quiz.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -54,7 +56,8 @@ import { QuizComponent } from './components/quiz/quiz.component';
     MatDividerModule,
     MatButtonModule,
     MatRadioModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [
   ],
